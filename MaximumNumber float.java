@@ -29,6 +29,16 @@ public class MaximumNumber {
         return max;
     }
 
+    // implementing method to get maximum of three float numbers
+    public void getThreeFloatNumbers(Float[] floats) {
+        float max = 0;
+        for (int i=0; i<3; i++) {
+            if(max <= floats[i]) {
+                max = floats[i];
+            }
+        }
+        logger.info("maximun number of given three float numbers = " + max);
+    }
     public static void main(String[] args) {
         BasicConfigurator.configure();
         logger.info("Given Three Integers and Finding The Maximum !");
@@ -36,5 +46,8 @@ public class MaximumNumber {
         MaximumNumber generics = new MaximumNumber();
         Integer[] a = {10, 8, 15 };
         generics.getThreeIntegerNumbers(a);
+
+        Floats[] f = {1.5f, 1.1f, 1.37f};
+        generics.getThreeFloatNumbers(f);
     }
 }
